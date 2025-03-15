@@ -1,0 +1,108 @@
+{
+    "me": "Senzo Calvin Shinga",
+    "education": {
+        "school": "WeThinkCode_",
+        "qualification": "NQF5 Systems Development",
+        "certifications": [
+            "Introduction to Cybersecurity - Harvard University"
+        ]
+    },
+    "skills I'm familiar with": [
+        "Python",
+        "TypeScript",
+        "React",
+        "Node.js",
+        "Tailwind CSS",
+        "JavaScript",
+        "Flask",
+        "SQL",
+        "Git",
+        "Java",
+        "Flutter",
+        "Dart",
+        "Three.js",
+        "MongoDB",
+        "Flutter",
+        "Dart"
+    ],
+    "workExperience": [
+        {
+            "position": "IT Desk Support & Systems Administrator",
+            "company": "JHPIEGO, Port Shepstone",
+            "years": "2018 – 2022",
+            "responsibilities": [
+                "Managed Linux and Windows systems, reducing downtime by 40% through proactive monitoring.",
+                "Configured and maintained wireless networks using Mikrotik Routers and Ubiquiti APs.",
+                "Implemented network security measures including firewall configuration and access controls.",
+                "Provided technical support and training to end-users with excellent communication skills."
+            ],
+            "reference": "Zinhle Lumikuye | +27694379868 | zintlelumi.zx@gmail.com"
+        },
+        {
+            "position": "Software Developer & IT Support",
+            "My freelance company": "InnoWave620",
+            "years": "2022 – Present",
+            "responsibilities": [
+                "Build Web Apps, Mobile Apps, and Desktop Apps for clients and self-development.",
+                "Maintain Windows/Linux systems while developing and implementing technical solutions.",
+                "Configure and optimize wireless networks, including Mikrotik, etc.",
+                "Conduct system security assessments and implement hardening measures.",
+                "Provide hands-on technical support for hardware and software issues."
+            ]
+        }
+    ],
+    "technicalSkills": {
+        "infrastructure": [
+            "Linux administration",
+            "Windows Server/Desktop",
+            "Hardware and Software troubleshooting"
+        ],
+        "networking": [
+            "Wireless networks",
+            "Mikrotik Routers"
+        ],
+        "security": [
+            "Firewalls",
+            "System hardening",
+            "Access control",
+            "Network monitoring"
+        ]
+    },
+    "contactDetails": {
+        "email": "innowave620@gmail.com",
+        "phone": "+27633941909"
+    },
+    "projects": [
+        {
+            "name": "Portfolio Website",
+            "description": "I built a portfolio website with Three.js, React, and JavaScript for Rachelle Katja, a businesswoman, model, artist, and fitness instructor.",
+            "link": "https://senzo-calvin-shinga-portfolio.com"
+        },
+        {
+            "name": "AI Chat Interface",
+            "description": "I developed an AI-integrated chat interface portfolio website to answer questions about me.",
+            "link": "https://ai-chat-interface.com"
+        },
+        {
+            "name": "AI Powered ATS Resume Scanner",
+            "description": "An AI-powered ATS Scanner and Enhancer for resumes, helping scan resumes against a job description and enhancing them to better the chances of landing an interview.",
+            "live link": "https://ats-friendly-cv-builder-production.up.railway.app/"
+        },
+        {
+            "name": "Job Finder App",
+            "description": "An app to help maids and landscapers find jobs easily and get paid fairly.",
+            "status": "In development"
+        }
+    ],
+    "linkedin": "https://www.linkedin.com/in/senzo-shinga-a970802a9/",
+    "github": "https://github.com/InnoWave620",
+    "about": "I am Senzo Calvin Shinga, a software developer with a passion for building web applications. I have experience in various technologies including JavaScript, TypeScript, React, and Node.js.",
+    "interests": [
+        "Cybersecurity",
+        "Penetration testing"
+    ],
+    "locations": [
+        "Currently staying in Durban CBD",
+        "Born and raised in Port Shepstone"
+    ]
+}

@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+.robot-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.robot-body {
+  width: 40px;
+  height: 80px;
+  background-color: #333;
+  border-radius: 5px;
+  position: relative;
+}
+
+.robot-leg {
+  width: 8px;
+  height: 20px;
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  animation: walk 0.5s infinite alternate;
+}
+
+.robot-leg.left {
+  left: 5px;
+}
+
+.robot-leg.right {
+  right: 5px;
+  animation-delay: 0.25s; /* Delay to make it alternate with the left leg */
+}
+
+@keyframes walk {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Lift leg */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
