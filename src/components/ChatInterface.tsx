@@ -134,11 +134,10 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
   return (
     <div className="flex flex-col h-screen bg-[#e5ddd5]">
       <div className="flex items-center justify-center gap-3 p-4 bg-gradient-to-r from-green-600 to-green-800 text-white font-bold text-xl shadow-md">
-        <img
-          src="/src/assets/robot-icon.png"
-          alt="AI Avatar"
-          className="w-8 h-8"
-        />
+        {/* Default React robot icon */}
+        <span className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center">
+          🤖
+        </span>
         I'm a robot Portfolio, get to know Me!
       </div>
 
@@ -154,11 +153,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
             }`}
           >
             {!message.isUser && (
-              <img
-                src="/src/assets/robot-icon.png"
-                alt="AI Avatar"
-                className="w-8 h-8 mr-2 rounded-full animate-walk"
-              />
+              <span className="w-8 h-8 mr-2 rounded-full flex items-center justify-center">
+                🤖
+              </span>
             )}
             <div
               className={`p-3 max-w-xs rounded-lg shadow-md ${
@@ -176,11 +173,9 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
         {/* Display AI typing effect */}
         {isTyping && (
           <div className="flex justify-start">
-            <img
-              src="/src/assets/robot-icon.png"
-              alt="AI Avatar"
-              className="w-8 h-8 mr-2 rounded-full animate-walk"
-            />
+            <span className="w-8 h-8 mr-2 rounded-full flex items-center justify-center">
+              🤖
+            </span>
             <div
               className="p-3 max-w-xs rounded-lg shadow-md bg-white text-gray-900"
               dangerouslySetInnerHTML={{ __html: displayedResponse }}
