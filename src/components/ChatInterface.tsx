@@ -139,7 +139,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
           alt="AI Avatar"
           className="w-8 h-8"
         />
-        I'm Senzo, Ask me Anything!
+        I'm a robot Portfolio, get to know Me!
       </div>
 
       <div
