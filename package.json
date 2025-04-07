@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "homepage": "https://github.com/InnoWave620.github.io/AI_Powered-portfolio/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.14",
@@ -18,6 +22,7 @@
     "body-parser": "^1.20.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "gh-pages": "^6.3.0",
     "groq-sdk": "^0.16.0",
     "lucide-react": "^0.482.0",
     "react": "^19.0.0",
