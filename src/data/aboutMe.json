@@ -74,19 +74,19 @@
     },
     "projects": [
         {
-            "name": "Portfolio Website",
+            "name": "Rachelle Katja Portfolio Website",
             "description": "I built a portfolio website with Three.js, React, and JavaScript for Rachelle Katja, a businesswoman, model, artist, and fitness instructor.",
-            "link": "https://senzo-calvin-shinga-portfolio.com"
+            "link": "https://github.com/InnoWave620/rachell_katja-portfolio"
         },
         {
             "name": "AI Chat Interface",
-            "description": "I developed an AI-integrated chat interface portfolio website to answer questions about me.",
+            "description": "A TypeScript, JavaScript and React AI-integrated chat interface portfolio website to answer questions about me.",
             "link": "https://ai-chat-interface.com"
         },
         {
             "name": "AI Powered ATS Resume Scanner",
             "description": "An AI-powered ATS Scanner and Enhancer for resumes, helping scan resumes against a job description and enhancing them to better the chances of landing an interview.",
-            "live link": "https://ats-friendly-cv-builder-production.up.railway.app/"
+            "live link": "https://ats-friendly-cv-builder-production.up.railway.app"
         },
         {
             "name": "Job Finder App",
@@ -94,7 +94,7 @@
             "status": "In development"
         }
     ],
-    "linkedin": "https://www.linkedin.com/in/senzo-shinga-a970802a9/",
+    "linkedin": "https://www.linkedin.com/in/senzo-shinga-a970802a9",
     "github": "https://github.com/InnoWave620",
     "about": "I am Senzo Calvin Shinga, a software developer with a passion for building web applications. I have experience in various technologies including JavaScript, TypeScript, React, and Node.js.",
     "interests": [
