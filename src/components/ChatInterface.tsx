@@ -53,7 +53,45 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
     setIsTyping(true);
 
     try {
-      const chatCompletion = await groq.chat.completions.create({
+      // const chatCompletion = await groq.chat.completions.create({
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          messages: [
+            {
+              role: "system",
+              content: `You are Senzo Calvin Shinga. Here is some information about you: ${JSON.stringify(
+                aboutMe
+              )}. Respond ONLY if the user's question is directly related to Senzo Calvin Shinga. If not, politely decline to answer. Format the text by replacing asterisks with bold text, split long texts into smaller paragraphs using double line breaks, and ensure only project and social media links are clickable.`,
+            },
+            { role: "user", content: inputValue },
+          ],
+          // model: "llama-3.3-70b-versatile", // Model is set on the backend
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // Assuming the backend streams the response directly as text
+      // and ChatInterface is set up to handle streamed text or a complete text response.
+      // For simplicity, this example will read the entire response as text.
+      // If your backend streams, you'll need to adjust how you read the response body.
+      const responseText = await response.text(); 
+      // Simulate the structure of the Groq API response if needed by your existing logic
+      const chatCompletion = {
+        choices: [
+          {
+            message: {
+              content: responseText,
+            },
+          },
+        ],
+      };
         messages: [
           {
             role: "system",
@@ -63,8 +101,16 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
           },
           { role: "user", content: inputValue },
         ],
-        model: "llama-3.3-70b-versatile",
+        // model: "llama-3.3-70b-versatile", // Model is set on the backend
       });
+      // The following lines are now part of the fetch call block above
+      // const responseContent =
+      //   chatCompletion.choices[0]?.message?.content ||
+      //   "I can only answer questions related to Senzo Calvin Shinga.";
+
+      // const formattedResponse = formatResponseText(responseContent);
+      // simulateTypingEffect(formattedResponse);
+      // setInputValue("");
 
       const responseContent =
         chatCompletion.choices[0]?.message?.content ||
