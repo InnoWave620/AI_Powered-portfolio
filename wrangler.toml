@@ -1,0 +1,6 @@
+name = "AI_Powered-portfolio"
+compatibility_date = "2025-06-19"
+
+[build]
+upload.format = "directory"
+pages_build_output_dir = "./dist"
