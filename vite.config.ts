@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: "/AI_Powered-portfolio",
+  base: "/", // Adjusted for Cloudflare Pages deployment
   server: {
     host: true,
     allowedHosts: ['0438-41-116-75-31.ngrok-free.app'],
