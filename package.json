@@ -11,6 +11,9 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
+    "typecheck": "tsc --noEmit",
+    "preview:cloudflare": "wrangler pages dev --experimental-import-meta-resolve",
+    "deploy:cloudflare": "wrangler pages publish dist",
     "pages:dev": "npx @cloudflare/next-on-pages@latest dev",
     "pages:build": "npx @cloudflare/next-on-pages"
   },
