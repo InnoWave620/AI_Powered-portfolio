@@ -92,25 +92,6 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
           },
         ],
       };
-        messages: [
-          {
-            role: "system",
-            content: `You are Senzo Calvin Shinga. Here is some information about you: ${JSON.stringify(
-              aboutMe
-            )}. Respond ONLY if the user's question is directly related to Senzo Calvin Shinga. If not, politely decline to answer. Format the text by replacing asterisks with bold text, split long texts into smaller paragraphs using double line breaks, and ensure only project and social media links are clickable.`,
-          },
-          { role: "user", content: inputValue },
-        ],
-        // model: "llama-3.3-70b-versatile", // Model is set on the backend
-      });
-      // The following lines are now part of the fetch call block above
-      // const responseContent =
-      //   chatCompletion.choices[0]?.message?.content ||
-      //   "I can only answer questions related to Senzo Calvin Shinga.";
-
-      // const formattedResponse = formatResponseText(responseContent);
-      // simulateTypingEffect(formattedResponse);
-      // setInputValue("");
 
       const responseContent =
         chatCompletion.choices[0]?.message?.content ||
@@ -165,14 +146,20 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
       "<strong>$1</strong>"
     );
 
-    // Add line breaks after each sentence
-    formattedText = formattedText.replace(/\.\s/g, ".<br><br>");
-
-    // Convert project and social media links to clickable links
+    // Convert URLs to clickable links BEFORE adding line breaks to avoid breaking HTML
     formattedText = formattedText.replace(
-      /(https?:\/\/(senzo-calvin-shinga-portfolio\.com|ai-chat-interface\.com|ats-friendly-cv-builder-production\.up\.railway\.app|linkedin\.com\/in\/senzo-shinga-a970802a9|github\.com\/InnoWave620)[^\s]+)/g,
-      '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">$1</a>'
+      /(https?:\/\/(?:www\.)?(senzo-calvin-shinga-portfolio\.com|ai-chat-interface\.com|ats-friendly-cv-builder-production\.up\.railway\.app|linkedin\.com\/in\/senzo-shinga-a970802a9|github\.com\/InnoWave620)(?:[^\s<>"]*)?)/gi,
+      '<a href="$1" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800 break-words">$1</a>'
     );
+
+    // Also handle github.com/InnoWave620 without protocol
+    formattedText = formattedText.replace(
+      /(?<!href=")(?<!>)(github\.com\/InnoWave620|linkedin\.com\/in\/senzo-shinga-a970802a9)(?![^<]*<\/a>)/gi,
+      '<a href="https://$1" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800 break-words">$1</a>'
+    );
+
+    // Add line breaks after sentences (but not inside HTML tags)
+    formattedText = formattedText.replace(/\.\s+(?![^<]*>)/g, ".<br><br>");
 
     return formattedText;
   };
@@ -204,7 +191,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
               </span>
             )}
             <div
-              className={`p-3 max-w-xs rounded-lg shadow-md ${
+              className={`p-3 max-w-xs lg:max-w-md rounded-lg shadow-md break-words overflow-wrap-anywhere ${
                 message.isUser
                   ? "bg-green-500 text-white"
                   : "bg-white text-gray-900"
@@ -223,7 +210,7 @@ const ChatInterface: React.FC<ChatInterfaceProps> = ({ groq, aboutMe }) => {
               🤖
             </span>
             <div
-              className="p-3 max-w-xs rounded-lg shadow-md bg-white text-gray-900"
+              className="p-3 max-w-xs lg:max-w-md rounded-lg shadow-md bg-white text-gray-900 break-words overflow-wrap-anywhere"
               dangerouslySetInnerHTML={{ __html: displayedResponse }}
             />
           </div>
